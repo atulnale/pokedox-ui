@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Navbar from './components/navbar/Navbar'
 import SearchComponent from './components/search/SearchComponent'
+import PokemonContainer from './pokemon-grid/PokemonContainer'
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
         <div className="bg-[#313131]"></div>
         <div className=""><SearchComponent /></div>
         <div className="bg-[#313131]"></div>
+        <div className="bg-[url('https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png')] bg-white"></div>
+        <div className="bg-white"><PokemonContainer /></div>
+        <div className="bg-[url('https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png')] bg-white"></div>
       </div>
     </div>
   )

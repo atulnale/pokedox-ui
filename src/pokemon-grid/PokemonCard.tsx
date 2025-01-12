@@ -22,9 +22,9 @@ const PokemonCard = ({pokemon}:{pokemon:pokemon_type}) => {
     }
 
   return (
-    <div className="hover:animate-bounceOnce cursor-pointer" onClick={handleCardClick}>
+    <div className="hover:animate-bounceOnce cursor-pointe" onClick={handleCardClick}>
       <div className="bg-gray-100 rounded-md">
-        <img src={pokemon.ThumbnailImage} alt={pokemon.ThumbnailAltText} />
+        <img src={pokemon.ThumbnailImage} alt={pokemon.ThumbnailAltText} className="h-96 sm:h-auto"/>
       </div>
       <div className="pl-2">
         <p className="text-[12px] text-gray-500">#{pokemon.number}</p>

@@ -10,15 +10,15 @@ const PokemonContainer = () => {
   const [visiblePokemons, setVisiblePokemons] = React.useState<pokemon_type[]>(
     []
   );
-//   useEffect(() => {
-//     setVisiblePokemons(pokemons.slice(0, visibleCount));
-//     console.log(visiblePokemons);
-//   }, [pokemons, visibleCount]);
-useEffect(() => {
+  //   useEffect(() => {
+  //     setVisiblePokemons(pokemons.slice(0, visibleCount));
+  //     console.log(visiblePokemons);
+  //   }, [pokemons, visibleCount]);
+  useEffect(() => {
     const minCount = Math.min(12, pokemons.length);
     setVisiblePokemons(pokemons.slice(0, minCount));
     setVisibleCount(minCount);
-},[pokemons]);
+  }, [pokemons]);
   const loadMore = () => {
     setVisiblePokemons(
       visiblePokemons?.concat(pokemons.slice(visibleCount, visibleCount + 12))
@@ -27,13 +27,15 @@ useEffect(() => {
   };
   return (
     <div className="py-10">
-<div className="flex justify-center flex-col sm:flex-wrap sm:flex-row gap-4">
-      {visiblePokemons?.map((pokemon: pokemon_type) => (
-        <PokemonCard pokemon={pokemon} key={pokemon.number} />
-      ))}
-      
-    </div>
-    <div className="mt-10 flex justify-center">
+      <div className="flex w-full justify-center">
+        <div className="flex flex-col sm:flex-wrap sm:flex-row sm:justify-center gap-4">
+          {visiblePokemons?.map((pokemon: pokemon_type) => (
+              <PokemonCard pokemon={pokemon} key={pokemon.number} />
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-10 flex justify-center">
         <button
           className="bg-[#30a7d7] text-white px-4 py-2 rounded-md"
           onClick={loadMore}
@@ -42,7 +44,6 @@ useEffect(() => {
         </button>
       </div>
     </div>
-    
   );
 };
 

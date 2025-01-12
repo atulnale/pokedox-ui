@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { pokemon_type, PokemonTypeColor } from "./PokemonTypeColor";
+import { formatType, pokemon_type, PokemonTypeColor } from "./PokemonTypeColor";
 import { useNavigate } from "react-router-dom";
 import { AppDispatch } from "../redux/store";
 import { useDispatch } from "react-redux";
@@ -12,9 +12,7 @@ const PokemonCard = ({pokemon}:{pokemon:pokemon_type}) => {
   const formatColor = (type: string) => {
     return PokemonTypeColor(type);
   };
-  const formatType = (type: string) => {
-    return type.charAt(0).toUpperCase() + type.slice(1);
-  }
+  
 
     const handleCardClick = () => {
         dispatch(selectPokemon(pokemon));

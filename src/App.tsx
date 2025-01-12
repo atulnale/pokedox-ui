@@ -29,7 +29,7 @@ function App() {
           </div>
         </div>
       </div> */}
-      <div className='max-w-screen-xl grid grid-cols-[.5fr_10fr_.5fr] md:grid-cols-[1fr_8fr_1fr] grid-rows-1 mx-auto'>
+      <div className='max-w-screen-xl grid grid-cols-[.5fr_10fr_.5fr] md:grid-cols-[2fr_10fr_2fr] grid-rows-1 mx-auto'>
         <div className="bg-[url('https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png')] bg-white"></div>
         <div className="bg-white"><Navbar /></div>
         <div className="bg-[url('https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png')] bg-white"></div>

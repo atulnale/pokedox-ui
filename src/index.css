@@ -28,6 +28,10 @@ body {
   clip-path: polygon(0% 0%, 0% 100%, 100% 100%);
   
 }
+@keyframes animate-bg-change-stats {
+  0% { background-color: white; }
+  100% { background-color: blue-500; }
+}
 
 @tailwind base;
 @tailwind components;

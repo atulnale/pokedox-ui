@@ -23,7 +23,7 @@ export const PokemonTypeColor = (type: string) => {
         case "fighting":
           return "bg-red-800";
         case "psychic":
-          return "bg-pink-800";
+          return "bg-pink-800 text-white";
         case "rock":
           return "bg-gray-400";
         case "steel":
@@ -55,3 +55,6 @@ export type pokemon_type = {
     id: number;
     type: string[];
   };
+  export const formatType = (type: string) => {
+    return type.charAt(0).toUpperCase() + type.slice(1);
+  }

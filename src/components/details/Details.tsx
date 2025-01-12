@@ -15,15 +15,19 @@ const Details = () => {
   );
   const [selectedPokemon, setSelectedPokemon] =
     React.useState<pokemon_type | null>(null);
+    const [evolutions, setEvolutions] = useState<pokemon_type[]>([]);
   useEffect(() => {
     if (!selected) {
       const pokemon = pokemons.find((pokemon) => pokemon.name === name);
       if (pokemon) {
         setSelectedPokemon(pokemon);
+        setEvolutions(getPokemonEvolutions(pokemon));
       }
     } else {
       setSelectedPokemon(selected);
+      setEvolutions(getPokemonEvolutions(selected));
     }
+    
   },[]);
   const getPreviousPokemon = (): pokemon_type => {
     const index = selectedPokemon ? pokemons.indexOf(selectedPokemon) : -1;
@@ -39,6 +43,18 @@ const Details = () => {
     }
     return pokemons[index + 1];
   };
+    const getPokemonEvolutions = (pokemon:pokemon_type): pokemon_type[] => {
+        const id = Number(pokemon.number);
+        if(pokemon && id <= 3) {
+            console.log(true);
+            return pokemons.slice(0, 3);
+        }
+        console.log(false);
+        return pokemon 
+          ? pokemons.slice(id - 3, id)
+          : [];
+    }
+
   return (
     <>
       {!selectedPokemon ? (
@@ -101,7 +117,7 @@ const Details = () => {
           } delay-100`}></div>
 <div className="bg-[url('https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png')] bg-white"></div>
       <div className="bg-white">
-        
+        <PokemonDetailsCard pokemon={selectedPokemon} evolutions={evolutions}/>
       </div>
       <div className="bg-[url('https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png')] bg-white"></div>
 

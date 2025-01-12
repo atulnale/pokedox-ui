@@ -28,7 +28,7 @@ const PokemonContainer = () => {
   return (
     <div className="py-10">
       <div className="flex w-full justify-center">
-        <div className="flex flex-col sm:flex-wrap sm:flex-row sm:justify-center gap-4">
+        <div className="flex flex-col sm:flex-wrap sm:flex-row sm:justify-center gap-4 flex-grow">
           {visiblePokemons?.map((pokemon: pokemon_type) => (
               <PokemonCard pokemon={pokemon} key={pokemon.number} />
           ))}
